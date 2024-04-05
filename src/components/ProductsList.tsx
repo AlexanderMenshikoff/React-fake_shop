@@ -17,10 +17,10 @@ export function ProductsList() {
   }, []);
 
   return (
-    <div className="w-[100%]  ">
-      <div className="flex flex-wrap items-center gap-[60px]">
+    <>
+      <div className="flex flex-wrap items-center gap-[60px] max-w-[1200px] ml-auto mr-auto">
         {products.map((el) => (
-          <div className="w-1/4 text-center " key={el.id}>
+          <div className="w-[30%] text-center " key={el.id}>
             <img
               className="w-4/4 ml-auto mr-auto"
               src={el.images[0]}
@@ -31,6 +31,6 @@ export function ProductsList() {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
