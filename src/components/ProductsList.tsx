@@ -25,11 +25,13 @@ export function ProductsList() {
       <div className="flex flex-wrap items-center gap-[60px] max-w-[1200px] ml-auto mr-auto">
         {products.map((el) =>
           el.id <= 51 ? (
-            <div className="w-[30%] text-center " key={el.id}>
+            <div className="w-[30%] text-center cursor-pointer" key={el.id}>
               <img
-                className="w-4/4 ml-auto mr-auto"
+                className="ml-auto mr-auto"
                 src={el.images[0]}
                 alt={el.title}
+                onMouseEnter={(e) => (e.currentTarget.src = el.images[1])}
+                onMouseLeave={(e) => (e.currentTarget.src = el.images[0])}
               />
               <div className=" ml-auto mr-auto">{el.title}</div>
               <div className=" ml-auto mr-auto">{el.price}$</div>
