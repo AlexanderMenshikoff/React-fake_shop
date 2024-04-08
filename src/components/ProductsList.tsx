@@ -22,7 +22,7 @@ export function ProductsList() {
 
   return (
     <>
-      <div className="flex flex-wrap items-center gap-[60px] max-w-[1200px] ml-auto mr-auto">
+      <div className="flex flex-wrap items-center gap-[60px] max-w-[1200px] ml-auto mr-auto pt-[350px] ">
         {products.map((el) => (
           <div
             className="w-[30%] h-[432px] text-center cursor-pointer flex items-end"
@@ -48,7 +48,7 @@ export function ProductsList() {
       {showProducts <= products.length ? (
         <div className="flex justify-center">
           <button
-            className="ml-auto mr-auto mt-[40px] mb-[40px] border-2 rounded-[25px] py-[10px] px-[20px]"
+            className="ml-auto mr-auto mt-[60px] mb-[40px] border-2 py-[10px] px-[20px] text-white bg-black"
             onClick={() => {
               setShowProducts((prev) => prev + 12);
             }}
