@@ -8,7 +8,7 @@ export function ProductsList() {
 
   async function getData() {
     const response = await axios.get<IProductsList[]>(
-      `https://api.escuelajs.co/api/v1/products?offset=0&limit=${showProducts}`
+      `https://fakestoreapi.com/products?offset=0&limit=${showProducts}`
     );
     setProducts(response.data);
   }
@@ -23,31 +23,27 @@ export function ProductsList() {
   return (
     <>
       <div className="flex flex-wrap items-center gap-[60px] max-w-[1200px] ml-auto mr-auto">
-        {products.map((el) =>
-          el.id <= 51 ? (
-            <div className="w-[30%] text-center cursor-pointer" key={el.id}>
+        {products.map((el) => (
+          <div
+            className="w-[30%] h-[432px] text-center cursor-pointer flex items-end"
+            key={el.id}
+          >
+            <div className="ml-auto mr-auto whitespace-nowrap overflow-hidden text-ellipsis">
               <img
-                className="ml-auto mr-auto"
-                src={el.images[0]}
+                className="ml-auto mr-auto max-h-[360px] mb-[30px]"
+                src={el.image}
                 alt={el.title}
-                onMouseEnter={(e) => (e.currentTarget.src = el.images[1])}
-                onMouseLeave={(e) => (e.currentTarget.src = el.images[0])}
+                // onMouseEnter={(e) => (e.currentTarget.src = el.images[1])}
+                // onMouseLeave={(e) => (e.currentTarget.src = el.images[0])}
               />
-              <div className=" ml-auto mr-auto">{el.title}</div>
-              <div className=" ml-auto mr-auto">{el.price}$</div>
+
+              <p className="whitespace-nowrap overflow-hidden text-ellipsis">
+                {el.title}
+              </p>
+              <p className=" ">{el.price}$</p>
             </div>
-          ) : (
-            <div className="w-[30%] text-center " key={el.id}>
-              <img
-                className=" ml-auto mr-auto"
-                src={el.category.image}
-                alt={el.title}
-              />
-              <div className=" ml-auto mr-auto ">{el.title}</div>
-              <div className=" ml-auto mr-auto">{el.price}$</div>
-            </div>
-          )
-        )}
+          </div>
+        ))}
       </div>
       {showProducts <= products.length ? (
         <div className="flex justify-center">
