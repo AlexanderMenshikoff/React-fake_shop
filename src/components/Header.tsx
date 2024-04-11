@@ -5,7 +5,12 @@ export function Header() {
   return (
     <div className="bg-black opacity-90 h-[80px] fixed w-[100%] flex items-center justify-center">
       <nav className="flex justify-center items-center ">
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+          }
+        >
           <FakeLogo template="w-[220px] h-[130px] fixed left-[0px] top-[0px]" />
         </Link>
 
