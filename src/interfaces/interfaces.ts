@@ -10,3 +10,13 @@ export interface IProductsList {
     count: number;
   };
 }
+
+export interface IDeliveryItem {
+  img: string;
+  mainText: string;
+  subText: string;
+}
+
+export interface IFakeLogo {
+  template: string;
+}
