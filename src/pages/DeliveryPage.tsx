@@ -1,17 +1,22 @@
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { deliveryItemsArr } from "../data/data";
+import { DeliveryItem, IDeliveryItem } from "../components/DeliveryItem";
 
 export function DeliveryPage() {
   return (
     <>
       <Header />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque mollitia
-        cumque iste repudiandae minima? Molestiae iusto, odit aliquam eius a
-        illo quo minus, perferendis minima hic nam nulla voluptatem possimus
-        atque? Error omnis iste voluptas fugit. Quis explicabo odit debitis,
-        tempora tempore, obcaecati dolorum dolore consequuntur, dolorem
-        molestiae ad deleniti!
+      <div className="flex flex-wrap items-center gap-[60px] max-w-[1200px] ml-auto mr-auto pt-[180px]">
+        {deliveryItemsArr.map((el: IDeliveryItem) => {
+          return (
+            <DeliveryItem
+              img={el.img}
+              mainText={el.mainText}
+              subText={el.subText}
+            />
+          );
+        })}
       </div>
       <Footer />
     </>
