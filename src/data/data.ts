@@ -1,4 +1,4 @@
-import { IDeliveryItem } from "../components/DeliveryItem";
+import { IDeliveryItem } from "../interfaces/interfaces";
 import twoArrowsImg from "../img/arrows3_5110.jpg";
 import searchingImg from "../img/arrows_5506.jpg";
 import backImg from "../img/arrows4.jpg";
