@@ -1,8 +1,4 @@
-export interface IDeliveryItem {
-  img: string;
-  mainText: string;
-  subText: string;
-}
+import { IDeliveryItem } from "../interfaces/interfaces";
 
 export function DeliveryItem(props: IDeliveryItem) {
   return (

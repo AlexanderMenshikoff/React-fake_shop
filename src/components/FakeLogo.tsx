@@ -1,8 +1,5 @@
 import fakeLogo from "../img/fake-logo.png";
-
-interface IFakeLogo {
-  template: string;
-}
+import { IFakeLogo } from "../interfaces/interfaces";
 
 export function FakeLogo(props: IFakeLogo) {
   return (
