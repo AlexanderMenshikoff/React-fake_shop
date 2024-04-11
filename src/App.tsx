@@ -3,10 +3,12 @@ import "./App.css";
 import { AboutPage } from "./pages/AboutPage";
 import { DeliveryPage } from "./pages/DeliveryPage";
 import { MainPage } from "./pages/MainPage";
+import { ScrollToTop } from "./functions/functions";
 
 function App() {
   return (
     <div className="App">
+      {ScrollToTop()}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />
