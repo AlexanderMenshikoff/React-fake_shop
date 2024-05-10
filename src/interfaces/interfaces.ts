@@ -20,3 +20,7 @@ export interface IDeliveryItem {
 export interface IFakeLogo {
   template: string;
 }
+
+export interface IProduct {
+  product: IProductsList;
+}
