@@ -1,6 +1,8 @@
 import axios from "axios";
 import { IProductsList } from "../interfaces/interfaces";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { ProductItem } from "./ProductItem";
 
 export function ProductsList() {
   const [products, setProducts] = useState<IProductsList[]>([]);
@@ -24,27 +26,12 @@ export function ProductsList() {
     <>
       <div className="flex flex-wrap items-center gap-[60px] max-w-[1200px] ml-auto mr-auto pt-[350px] ">
         {products.map((el) => (
-          <div
-            className="w-[30%] h-[432px] text-center cursor-pointer flex items-end"
-            key={el.id}
-          >
-            <div className="ml-auto mr-auto whitespace-nowrap overflow-hidden text-ellipsis">
-              <img
-                className="ml-auto mr-auto max-h-[360px] mb-[30px]"
-                src={el.image}
-                alt={el.title}
-                // onMouseEnter={(e) => (e.currentTarget.src = el.images[1])}
-                // onMouseLeave={(e) => (e.currentTarget.src = el.images[0])}
-              />
-
-              <p className="whitespace-nowrap overflow-hidden text-ellipsis">
-                {el.title}
-              </p>
-              <p className=" ">{el.price}$</p>
-            </div>
-          </div>
+          // <Link to="/about">
+          <ProductItem product={el} />
+          // </Link>
         ))}
       </div>
+
       {showProducts <= products.length ? (
         <div className="flex justify-center">
           <button
