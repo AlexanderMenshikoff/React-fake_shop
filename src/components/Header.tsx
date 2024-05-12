@@ -3,7 +3,7 @@ import { FakeLogo } from "./FakeLogo";
 
 export function Header() {
   return (
-    <div className="bg-black opacity-90 h-[80px] fixed w-[100%] flex items-center justify-center">
+    <div className="bg-black opacity-90 h-[80px] fixed w-[100%] flex items-center justify-center z-[1]">
       <nav className="flex justify-center items-center ">
         <Link
           to="/"
