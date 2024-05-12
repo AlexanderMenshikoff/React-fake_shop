@@ -3,6 +3,7 @@ import { IProductsList } from "../interfaces/interfaces";
 import { useEffect, useState } from "react";
 import { ProductItem } from "./ProductItem";
 import { SearchingInput } from "./SearchingInput";
+import { ShowMoreBtn } from "./ShowMoreBtn";
 
 export function ProductsList() {
   const [products, setProducts] = useState<IProductsList[]>([]);
@@ -51,16 +52,7 @@ export function ProductsList() {
       {inputValue ? (
         ""
       ) : showProducts <= products.length ? (
-        <div className="flex justify-center">
-          <button
-            className="ml-auto mr-auto mt-[60px] mb-[40px] border-2 py-[10px] px-[20px] rounded-[10px] text-white bg-black"
-            onClick={() => {
-              setShowProducts((prev) => prev + 12);
-            }}
-          >
-            Show more
-          </button>
-        </div>
+        <ShowMoreBtn setShowProducts={setShowProducts} />
       ) : (
         ""
       )}
