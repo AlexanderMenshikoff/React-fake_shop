@@ -24,3 +24,8 @@ export interface IFakeLogo {
 export interface IProduct {
   product: IProductsList;
 }
+
+export interface ISearchingInput {
+  [x: string]: any;
+  inputValue: string;
+}
