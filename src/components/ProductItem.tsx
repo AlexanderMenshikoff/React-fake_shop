@@ -1,4 +1,4 @@
-import { IProduct, IProductsList } from "../interfaces/interfaces";
+import { IProduct } from "../interfaces/interfaces";
 
 export function ProductItem(props: IProduct) {
   return (
@@ -11,8 +11,6 @@ export function ProductItem(props: IProduct) {
           className="ml-auto mr-auto max-h-[360px] mb-[30px]"
           src={props.product.image}
           alt={props.product.title}
-          // onMouseEnter={(e) => (e.currentTarget.src = el.images[1])}
-          // onMouseLeave={(e) => (e.currentTarget.src = el.images[0])}
         />
 
         <p className="whitespace-nowrap overflow-hidden text-ellipsis">
